@@ -70,6 +70,18 @@ spark = SparkSession \
     .getOrCreate()
 
 #---------------------------------------------------
+#       SQL CLEANUP: DATABASES, TABLES, VIEWS
+#---------------------------------------------------
+print("JOB STARTED...")
+spark.sql("DROP DATABASE IF EXISTS {} CASCADE".format(dbname))
+
+spark.sql("CREATE DATABASE IF NOT EXISTS {}".format(dbname))
+
+print("SHOW DATABASES LIKE '{}'".format(dbname))
+spark.sql("SHOW DATABASES LIKE '{}'".format(dbname)).show()
+print("\n")
+
+#---------------------------------------------------
 #               CREATE BATCH DATA
 #---------------------------------------------------
 

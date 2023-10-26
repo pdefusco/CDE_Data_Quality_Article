@@ -100,7 +100,7 @@ class BankDataGen:
         FakerTextUS = FakerTextFactory(locale=['en_US'], providers=[bank])
 
         # partition parameters etc.
-        spark.conf.set("spark.sql.shuffle.partitions", shuffle_partitions_requested)
+        self.spark.conf.set("spark.sql.shuffle.partitions", shuffle_partitions_requested)
 
         fakerDataspec = (DataGenerator(self.spark, rows=data_rows, partitions=partitions_requested)
                     .withColumn("name", percentNulls=0.1, text=FakerTextUS("name") )
