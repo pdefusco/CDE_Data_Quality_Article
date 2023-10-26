@@ -86,7 +86,7 @@ batch_load_step = CDEJobRunOperator(
 data_quality_step = CDEJobRunOperator(
         task_id='data-quality-banking',
         dag=airflow_dag,
-        job_name='data_quality', #Must match name of CDE Spark Job in the CDE Jobs UI
+        job_name='ge_data_quality', #Must match name of CDE Spark Job in the CDE Jobs UI
         trigger_rule='all_success',
         )
 

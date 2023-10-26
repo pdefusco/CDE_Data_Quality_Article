@@ -6,7 +6,5 @@ RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
 RUN rm /usr/bin/python3
 RUN ln -s /usr/bin/python3.9 /usr/bin/python3
 RUN yum install python39-pip
-RUN /usr/bin/python3.9 -m pip install numpy pandas==1.2.5 pickleshare==0.7.5 py4j==0.10.9 pyarrow==4.0.1 python-dateutil==2.8.1 six==1.15.0 pyparsing==2.4.7 jmespath
-RUN /usr/bin/python3.9 -m pip install dbldatagen
-RUN /usr/bin/python3.9 -m pip install faker==19.12.0 pydantic==1.10.2 great_expectations==0.17.15
+RUN /usr/bin/python3.9 -m pip install numpy pandas==1.2.5 pickleshare==0.7.5 py4j==0.10.9 pyarrow==4.0.1 python-dateutil==2.8.1 six==1.15.0 pyparsing==2.4.7 jmespath dbldatagen faker==19.12.0 great-expectations==0.17.15
 USER ${DEX_UID}
